@@ -50,3 +50,7 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+
+#Constansts.kt file which contains the BASE_URL and API_KEY
+app/src/main/java/com/example/newsapp/Constants.kt
+
