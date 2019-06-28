@@ -34,9 +34,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             this@MainActivity.articleList = it.articles
 //            for(article in articleList)
 //                Log.d("MainActivity", article.title)
-//            newsAdapter?.notifyDataSetChanged()
-            newsAdapter = NewsAdapter(this@MainActivity.articleList, this@MainActivity)
-            recyclerView.adapter = newsAdapter
+            newsAdapter?.loadItems(it.articles)
+            newsAdapter?.notifyDataSetChanged()
         })
 
     }
@@ -47,6 +46,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.isNestedScrollingEnabled = true
+
+        newsAdapter = NewsAdapter(this@MainActivity.articleList, this@MainActivity)
+        recyclerView.adapter = newsAdapter
     }
 
     override fun onClick(p0: View?) {

@@ -35,6 +35,10 @@ class NewsAdapter(private var  newsList: List<Article>, var clickListener: View.
         return newsList[adapterPosition]
     }
 
+    fun loadItems(newItems: List<Article>) {
+        newsList = newItems
+    }
+
 
     inner class NewsViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView

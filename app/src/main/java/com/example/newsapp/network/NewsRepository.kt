@@ -19,7 +19,7 @@ class NewsRepository {
                 response: Response<NewsResponse>
             ) {
                 if (response.isSuccessful) {
-                    newsData.value = response.body()
+                    newsData.postValue(response.body())
                 }
             }
 
